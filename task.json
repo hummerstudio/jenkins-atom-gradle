@@ -1,7 +1,7 @@
 {
   "atomCode": "gradle",
   "name": "Gradle",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "把 gradle 插件变成一个原子：跑 gradle tasks，退出码即构建结果。",
   "execution": {
     "packagePath": "gradle.jar",
