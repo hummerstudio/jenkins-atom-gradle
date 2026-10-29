@@ -1,12 +1,12 @@
 {
   "atomCode": "gradle",
   "name": "Gradle",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "把 gradle 插件变成一个原子：跑 gradle tasks，退出码即构建结果。",
   "execution": {
     "packagePath": "gradle.jar",
     "language": "java",
-    "target": "$atom_java_path -cp gradle.jar GradleAtom"
+    "target": "$atom_java_path -cp gradle.jar com.jenkinschina.atom.sdk.AtomRunner"
   },
   "input": {
     "goals": {
@@ -31,11 +31,19 @@
     }
   },
   "output": {
-    "exitCode": { "type": "string", "description": "gradle 的退出码" },
-    "durationMs": { "type": "string", "description": "耗时（毫秒）" }
+    "exitCode": {
+      "type": "string",
+      "description": "gradle 的退出码"
+    },
+    "durationMs": {
+      "type": "string",
+      "description": "耗时（毫秒）"
+    }
   },
   "x-jenkins": {
     "protocol": "jenkins-1",
-    "requires": { "runner": ">=0.3.0" }
+    "requires": {
+      "runner": ">=0.3.0"
+    }
   }
 }
