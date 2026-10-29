@@ -1,0 +1,41 @@
+{
+  "atomCode": "gradle",
+  "name": "Gradle",
+  "version": "1.0.0",
+  "description": "把 gradle 插件变成一个原子：跑 gradle tasks，退出码即构建结果。",
+  "execution": {
+    "packagePath": "gradle.jar",
+    "language": "java",
+    "target": "$atom_java_path -cp gradle.jar GradleAtom"
+  },
+  "input": {
+    "goals": {
+      "label": "tasks（如 clean build）",
+      "type": "vuex-input",
+      "default": "build"
+    },
+    "options": {
+      "label": "额外参数（如 --no-daemon -Pci）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "home": {
+      "label": "gradle 安装目录（留空则用 PATH 或 $GRADLE_HOME）",
+      "type": "vuex-input",
+      "default": ""
+    },
+    "failOnError": {
+      "label": "非零退出码视为构建失败",
+      "type": "checkbox",
+      "default": "true"
+    }
+  },
+  "output": {
+    "exitCode": { "type": "string", "description": "gradle 的退出码" },
+    "durationMs": { "type": "string", "description": "耗时（毫秒）" }
+  },
+  "x-jenkins": {
+    "protocol": "jenkins-1",
+    "requires": { "runner": ">=0.3.0" }
+  }
+}

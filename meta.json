@@ -1,0 +1,8 @@
+{
+  "name": "Gradle",
+  "summary": "把 gradle 插件变成一个原子：跑 gradle tasks，退出码即构建结果。",
+  "author": "hummerstudio",
+  "license": "MIT",
+  "tags": ["build-tool", "official-port"],
+  "homepage": "https://github.com/hummerstudio/jenkins-atom-gradle"
+}
